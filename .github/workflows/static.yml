@@ -1,21 +1,53 @@
-name: Build Docs
+name: Generate and Deploy Documentation
 
 on:
   push:
-    branches: [ main ]  # Update this branch name if needed
+    branches: [ main ]  # Trigger on push to main branches
+  pull_request:
+    branches: [ main ]  # Also trigger on PRs to main branches
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  generate-docs:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Generate API docs
-        run: |
-          python build_docs.py  # Assuming build_docs.py is in the root of your repo
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-github-pages@v4
-        with:
-          branch: gh-pages  # Update this branch name if needed
-          folder: docs
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for proper versioning
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install git+https://github.com/tensorflow/docs
+        pip install absl-py google-ai-generativelanguage grpcio jinja2 pydantic ipython pillow pyyaml
+
+    - name: Generate documentation
+      run: |
+        python docs/build_docs.py --output_dir=_site
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: '_site'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      uses: actions/deploy-pages@v3
