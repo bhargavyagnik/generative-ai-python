@@ -1,0 +1,39 @@
+
+title: API Documentation
+description: Documentation for Google GenerativeAI
+# baseurl: "" # Change this to your repo name if not hosting at root
+# url: "" # Your GitHub Pages URL
+markdown: kramdown
+theme: jekyll-theme-minimal
+
+# Enable collections for API docs
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+      
+plugins:
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-seo-tag
+
+relative_links:
+  enabled: true
+  collections: true
+
+optional_front_matter:
+  enabled: true
+
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: true
