@@ -1,11 +1,12 @@
-name: Generate and Deploy Documentation
-
+name: Build and Deploy Docs
 on:
   push:
-    branches: [ main, master ]
+    branches:
+      - main  # or master, depending on your default branch
   pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual triggering
 
 permissions:
   contents: read
@@ -13,114 +14,40 @@ permissions:
   id-token: write
 
 jobs:
-  generate-docs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # if you have one
+          pip install git+https://github.com/tensorflow/docs
+          pip install absl-py jinja2 pydantic pillow ipython google-generativeai grpcio
+
+      - name: Build documentation
+        run: |
+          cd docs
+          python build_docs.py
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/api/google
+
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install git+https://github.com/tensorflow/docs
-        pip install absl-py google-generativeai grpcio jinja2 pydantic ipython pillow pyyaml
-
-    - name: Generate documentation
-      run: |
-        python docs/build_docs.py --output_dir=_site
-
-    - name: Setup documentation structure
-      run: |
-        mkdir -p _site
-        
-        # Add Jekyll front matter to generativeai.md and copy as index.md
-        echo "---
-        layout: default
-        title: Generative AI Python
-        nav_order: 1
-        description: \"Documentation for Generative AI Python\"
-        permalink: /
-        ---
-
-        $(cat docs/api/google/generativeai.md)" > _site/index.md
-        
-        # Add front matter to all other markdown files
-        find _site -name "*.md" -not -name "index.md" -exec sh -c '
-          echo "---
-        layout: default
-        parent: API Reference
-        ---
-
-        $(cat {})" > {}.tmp && mv {}.tmp {}
-        ' \;
-        
-        # Create Jekyll config
-        echo "title: Generative AI Python
-        description: Documentation for Generative AI Python
-        baseurl: '/generative-ai-python'
-        url: 'https://www.bhargavyagnik.com'
-        
-        remote_theme: just-the-docs/just-the-docs
-        
-        # Theme settings
-        color_scheme: light
-        search_enabled: true
-        heading_anchors: true
-        
-        # External navigation links
-        aux_links:
-          'View on GitHub':
-            - 'https://github.com/bhargavyagnik/generative-ai-python'
-        
-        # Footer content
-        footer_content: 'Copyright &copy; 2024 Bhargav Yagnik. Distributed under an <a href=\"https://github.com/bhargavyagnik/generative-ai-python/blob/main/LICENSE\">Apache 2.0 License.</a>'
-        
-        # Enable copy code button
-        enable_copy_code_button: true
-        
-        # Back to top link
-        back_to_top: true
-        back_to_top_text: 'Back to top'
-        
-        # Google Analytics
-        # ga_tracking: UA-XXXXXXXX-X
-        # ga_tracking_anonymize_ip: true
-        
-        # Exclude files from processing
-        exclude:
-          - Gemfile
-          - Gemfile.lock
-          - node_modules
-          - vendor/bundle/
-          - vendor/cache/
-          - vendor/gems/
-          - vendor/ruby/
-        " > _site/_config.yml
-        
-        # Create Gemfile
-        echo "source 'https://rubygems.org'
-        gem 'jekyll'
-        gem 'just-the-docs'" > _site/Gemfile
-
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: '_site'
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-      uses: actions/deploy-pages@v3
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
