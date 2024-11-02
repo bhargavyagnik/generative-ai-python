@@ -27,7 +27,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # if you have one
           pip install git+https://github.com/tensorflow/docs
           pip install absl-py jinja2 pydantic pillow ipython google-generativeai grpcio
 
