@@ -41,27 +41,76 @@ jobs:
 
     - name: Setup documentation structure
       run: |
-        # Create _site directory if it doesn't exist
         mkdir -p _site
         
-        # Copy the generativeai.md as index.md
-        cp docs/api/google/generativeai.md _site/index.md
+        # Add Jekyll front matter to generativeai.md and copy as index.md
+        echo "---
+        layout: default
+        title: Generative AI Python
+        nav_order: 1
+        description: \"Documentation for Generative AI Python\"
+        permalink: /
+        ---
+
+        $(cat docs/api/google/generativeai.md)" > _site/index.md
         
-        # Create jekyll config file
+        # Add front matter to all other markdown files
+        find _site -name "*.md" -not -name "index.md" -exec sh -c '
+          echo "---
+        layout: default
+        parent: API Reference
+        ---
+
+        $(cat {})" > {}.tmp && mv {}.tmp {}
+        ' \;
+        
+        # Create Jekyll config
         echo "title: Generative AI Python
         description: Documentation for Generative AI Python
         baseurl: '/generative-ai-python'
         url: 'https://www.bhargavyagnik.com'
+        
         remote_theme: just-the-docs/just-the-docs
         
-        # Enable or disable the site search
+        # Theme settings
+        color_scheme: light
         search_enabled: true
+        heading_anchors: true
         
-        # Aux links for the upper right navigation
+        # External navigation links
         aux_links:
           'View on GitHub':
             - 'https://github.com/bhargavyagnik/generative-ai-python'
+        
+        # Footer content
+        footer_content: 'Copyright &copy; 2024 Bhargav Yagnik. Distributed under an <a href=\"https://github.com/bhargavyagnik/generative-ai-python/blob/main/LICENSE\">Apache 2.0 License.</a>'
+        
+        # Enable copy code button
+        enable_copy_code_button: true
+        
+        # Back to top link
+        back_to_top: true
+        back_to_top_text: 'Back to top'
+        
+        # Google Analytics
+        # ga_tracking: UA-XXXXXXXX-X
+        # ga_tracking_anonymize_ip: true
+        
+        # Exclude files from processing
+        exclude:
+          - Gemfile
+          - Gemfile.lock
+          - node_modules
+          - vendor/bundle/
+          - vendor/cache/
+          - vendor/gems/
+          - vendor/ruby/
         " > _site/_config.yml
+        
+        # Create Gemfile
+        echo "source 'https://rubygems.org'
+        gem 'jekyll'
+        gem 'just-the-docs'" > _site/Gemfile
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
