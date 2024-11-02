@@ -2,10 +2,10 @@ name: Generate and Deploy Documentation
 
 on:
   push:
-    branches: [ main ]  # Trigger on push to main branches
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]  # Also trigger on PRs to main branches
-  workflow_dispatch:  # Allow manual trigger
+    branches: [ main, master ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Fetch all history for proper versioning
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -38,6 +38,30 @@ jobs:
     - name: Generate documentation
       run: |
         python docs/build_docs.py --output_dir=_site
+
+    - name: Setup documentation structure
+      run: |
+        # Create _site directory if it doesn't exist
+        mkdir -p _site
+        
+        # Copy the generativeai.md as index.md
+        cp docs/api/google/generativeai.md _site/index.md
+        
+        # Create jekyll config file
+        echo "title: Generative AI Python
+        description: Documentation for Generative AI Python
+        baseurl: '/generative-ai-python'
+        url: 'https://www.bhargavyagnik.com'
+        remote_theme: just-the-docs/just-the-docs
+        
+        # Enable or disable the site search
+        search_enabled: true
+        
+        # Aux links for the upper right navigation
+        aux_links:
+          'View on GitHub':
+            - 'https://github.com/bhargavyagnik/generative-ai-python'
+        " > _site/_config.yml
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
