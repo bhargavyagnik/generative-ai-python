@@ -29,7 +29,7 @@ master_doc = 'index'  # Set the homepage
 html_theme = 'pydata_sphinx_theme'  # Choose a theme (optional)
 # html_static_path = ['_static']  # Add a static folder if needed
 
-html_baseurl = https://www.bhargavyagnik.com/generative-ai-python/
+html_baseurl = 'https://www.bhargavyagnik.com/generative-ai-python/'
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 templates_path = ['_templates']
