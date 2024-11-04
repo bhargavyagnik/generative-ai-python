@@ -1,6 +1,9 @@
 import os
 import sys
 
+import sphinx.ext.pygments
+sphinx.ext.pygments.lexer_mapping['console'] = 'posix-terminal'
+
 project = 'Generative AI Python'
 copyright = '2024, Your Name'
 extensions = [
