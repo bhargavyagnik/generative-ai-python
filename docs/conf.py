@@ -27,14 +27,8 @@ master_doc = 'index'  # Set the homepage
 
 # Configure HTML output
 html_theme = 'pydata_sphinx_theme'  # Choose a theme (optional)
-html_static_path = ['_static']  # Add a static folder if needed
-html_sidebars = {
-    '**': [
-        'relations.html',  # Include related pages
-        'sources.html',  # Include source code links
-        'search.html',    # Include search box
-    ]
-}
+# html_static_path = ['_static']  # Add a static folder if needed
+
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 templates_path = ['_templates']
