@@ -13,7 +13,7 @@ myst_enable_extensions = [
 ]
 
 project = 'Generative AI Python'
-copyright = '2024, Your Name'
+copyright = '2024, Google-Gemini'
 extensions = [
     'sphinx.ext.coverage',
     'myst_parser',
@@ -29,6 +29,7 @@ master_doc = 'index'  # Set the homepage
 html_theme = 'pydata_sphinx_theme'  # Choose a theme (optional)
 # html_static_path = ['_static']  # Add a static folder if needed
 
+html_baseurl = https://www.bhargavyagnik.com/generative-ai-python/
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 templates_path = ['_templates']
