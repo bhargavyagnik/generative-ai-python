@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>google.generativeai.GenerativeModel &#8212; Generative AI Python  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/google/generativeai/GenerativeModel';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Generative AI Python  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">google.generativeai.GenerativeModel</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="google-generativeai-generativemodel">
+<h1>google.generativeai.GenerativeModel<a class="headerlink" href="#google-generativeai-generativemodel" title="Link to this heading">#</a></h1>
+<!-- Insert buttons and diff -->
+<table class="tfo-notebook-buttons tfo-api nocontent">
+<td>
+  <a target="_blank" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L27-L478">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />
+    View source on GitHub
+  </a>
+</td>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">genai.GenerativeModel</span></code> class wraps default parameters for calls to <a href="../../google/generativeai/GenerativeModel.md#generate_content"><code>GenerativeModel.generate_content</code></a>, <a href="../../google/generativeai/GenerativeModel.md#count_tokens"><code>GenerativeModel.count_tokens</code></a>, and <a href="../../google/generativeai/GenerativeModel.md#start_chat"><code>GenerativeModel.start_chat</code></a>.</p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>google.generativeai.GenerativeModel(
+    model_name: str = &#x27;gemini-1.5-flash-002&#x27;,
+    safety_settings: (safety_types.SafetySettingOptions | None) = None,
+    generation_config: (generation_types.GenerationConfigType | None) = None,
+    tools: (content_types.FunctionLibraryType | None) = None,
+    tool_config: (content_types.ToolConfigType | None) = None,
+    system_instruction: (content_types.ContentType | None) = None
+)
+</code></pre>
+<!-- Placeholder for "Used in" -->
+<p>This family of functionality is designed to support multi-turn conversations, and multimodal
+requests. What media-types are supported for input and output is model-dependant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">google.generativeai</span> <span class="k">as</span> <span class="nn">genai</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">PIL.Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;YOUR_API_KEY&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s1">&#39;models/gemini-1.5-flash&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="s1">&#39;Tell me a story about a magic backpack&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&quot;In the quaint little town of Lakeside, there lived a young girl named Lily...&quot;</span>
+</pre></div>
+</div>
+<section id="multimodal-input">
+<h2>Multimodal input:<a class="headerlink" href="#multimodal-input" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s1">&#39;models/gemini-1.5-flash&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="s2">&quot;Give me a recipe for these:&quot;</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;scones.jpeg&#39;</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&quot;**Blueberry Scones** ...&quot;</span>
+</pre></div>
+</div>
+<p>Multi-turn conversation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">chat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">start_chat</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;Hi, I have some questions for you.&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&quot;Sure, I&#39;ll do my best to answer your questions...&quot;</span>
+</pre></div>
+</div>
+<p>To list the compatible model names use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">genai</span><span class="o">.</span><span class="n">list_models</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;generateContent&#39;</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">supported_generation_methods</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Arguments</h2></th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">model_name</span></code><a id="model_name"></a></p>
+</td>
+<td>
+<p>The name of the model to query. To list compatible models use</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">safety_settings</span></code><a id="safety_settings"></a></p>
+</td>
+<td>
+<p>Sets the default safety filters. This controls which content is blocked
+by the api before being returned.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">generation_config</span></code><a id="generation_config"></a></p>
+</td>
+<td>
+<p>A <code class="docutils literal notranslate"><span class="pre">genai.GenerationConfig</span></code> setting the default generation parameters to
+use.</p>
+</td>
+</tr>
+</table>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">cached_content</span></code><a id="cached_content"></a></p>
+</td>
+<td>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">model_name</span></code><a id="model_name"></a></p>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<h3 id="count_tokens"><code>count_tokens</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L399-L424">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>count_tokens(
+    contents: content_types.ContentsType = None,
+    *,
+    generation_config: (generation_types.GenerationConfigType | None) = None,
+    safety_settings: (safety_types.SafetySettingOptions | None) = None,
+    tools: (content_types.FunctionLibraryType | None) = None,
+    tool_config: (content_types.ToolConfigType | None) = None,
+    request_options: (helper_types.RequestOptionsType | None) = None
+) -> protos.CountTokensResponse
+</code></pre>
+<h3 id="count_tokens_async"><code>count_tokens_async</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L426-L451">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>count_tokens_async(
+    contents=None,
+    *,
+    generation_config=None,
+    safety_settings=None,
+    tools=None,
+    tool_config=None,
+    request_options=None
+)
+</code></pre>
+<h3 id="from_cached_content"><code>from_cached_content</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L204-L235">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>from_cached_content(
+    cached_content: (str | caching.CachedContent),
+    *,
+    generation_config: (generation_types.GenerationConfigType | None) = None,
+    safety_settings: (safety_types.SafetySettingOptions | None) = None
+) -> GenerativeModel
+</code></pre>
+<p>Creates a model with <code class="docutils literal notranslate"><span class="pre">cached_content</span></code> as model’s context.</p>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">cached_content</span></code></p>
+</td>
+<td>
+<p>context for the model.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">generation_config</span></code></p>
+</td>
+<td>
+<p>Overrides for the model’s generation config.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">safety_settings</span></code></p>
+</td>
+<td>
+<p>Overrides for the model’s safety settings.</p>
+</td>
+</tr>
+</table>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
+<p><code class="docutils literal notranslate"><span class="pre">GenerativeModel</span></code> object with <code class="docutils literal notranslate"><span class="pre">cached_content</span></code> as its context.</p>
+</td>
+</tr>
+</table>
+<h3 id="generate_content"><code>generate_content</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L237-L342">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>generate_content(
+    contents: content_types.ContentsType,
+    *,
+    generation_config: (generation_types.GenerationConfigType | None) = None,
+    safety_settings: (safety_types.SafetySettingOptions | None) = None,
+    stream: bool = False,
+    tools: (content_types.FunctionLibraryType | None) = None,
+    tool_config: (content_types.ToolConfigType | None) = None,
+    request_options: (helper_types.RequestOptionsType | None) = None
+) -> generation_types.GenerateContentResponse
+</code></pre>
+<p>A multipurpose function to generate responses from the model.</p>
+<p>This <a href="../../google/generativeai/GenerativeModel.md#generate_content"><code>GenerativeModel.generate_content</code></a> method can handle multimodal input, and multi-turn
+conversations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s1">&#39;models/gemini-1.5-flash&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="s1">&#39;Tell me a story about a magic backpack&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+<section id="streaming">
+<h3>Streaming<a class="headerlink" href="#streaming" title="Link to this heading">#</a></h3>
+<p>This method supports streaming with the <code class="docutils literal notranslate"><span class="pre">stream=True</span></code>. The result has the same type as the non streaming case,
+but you can iterate over the response chunks as they become available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="s1">&#39;Tell me a story about a magic backpack&#39;</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="multi-turn">
+<h3>Multi-turn<a class="headerlink" href="#multi-turn" title="Link to this heading">#</a></h3>
+<p>This method supports multi-turn chats but is <strong>stateless</strong>: the entire conversation history needs to be sent with each
+request. This takes some manual management but gives you complete control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;parts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">]}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span> <span class="c1"># &quot;Hello, how can I help&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;role&#39;</span><span class="p">:</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;parts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;How does quantum physics work?&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a simpler multi-turn interface see <a href="../../google/generativeai/GenerativeModel.md#start_chat"><code>GenerativeModel.start_chat</code></a>.</p>
+</section>
+<section id="input-type-flexibility">
+<h3>Input type flexibility<a class="headerlink" href="#input-type-flexibility" title="Link to this heading">#</a></h3>
+<p>While the underlying API strictly expects a <code class="docutils literal notranslate"><span class="pre">list[protos.Content]</span></code> objects, this method
+will convert the user input into the correct type. The hierarchy of types that can be
+converted is below. Any of these objects can be passed as an equivalent <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Iterable[protos.Content]</span></code></p></li>
+<li><p><a href="../../google/generativeai/protos/Content.md"><code>protos.Content</code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Iterable[protos.Part]</span></code></p></li>
+<li><p><a href="../../google/generativeai/protos/Part.md"><code>protos.Part</code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">Image</span></code>, or <a href="../../google/generativeai/protos/Blob.md"><code>protos.Blob</code></a></p></li>
+</ul>
+<p>In an <code class="docutils literal notranslate"><span class="pre">Iterable[protos.Content]</span></code> each <code class="docutils literal notranslate"><span class="pre">content</span></code> is a separate message.
+But note that an <code class="docutils literal notranslate"><span class="pre">Iterable[protos.Part]</span></code> is taken as the parts of a single message.</p>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Arguments</th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">contents</span></code></p>
+</td>
+<td>
+<p>The contents serving as the model’s prompt.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">generation_config</span></code></p>
+</td>
+<td>
+<p>Overrides for the model’s generation config.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">safety_settings</span></code></p>
+</td>
+<td>
+<p>Overrides for the model’s safety settings.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">stream</span></code></p>
+</td>
+<td>
+<p>If True, yield response chunks as they are generated.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">tools</span></code></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">protos.Tools</span></code> more info coming soon.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">request_options</span></code></p>
+</td>
+<td>
+<p>Options for the request.</p>
+</td>
+</tr>
+</table>
+<h3 id="generate_content_async"><code>generate_content_async</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L344-L396">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>generate_content_async(
+    contents,
+    *,
+    generation_config=None,
+    safety_settings=None,
+    stream=False,
+    tools=None,
+    tool_config=None,
+    request_options=None
+)
+</code></pre>
+<p>The async version of <a href="../../google/generativeai/GenerativeModel.md#generate_content"><code>GenerativeModel.generate_content</code></a>.</p>
+<h3 id="start_chat"><code>start_chat</code></h3>
+<p><a target="_blank" class="external" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/generative_models.py#L455-L478">View source</a></p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>start_chat(
+    *,
+    history: (Iterable[content_types.StrictContentType] | None) = None,
+    enable_automatic_function_calling: bool = False
+) -> ChatSession
+</code></pre>
+<p>Returns a <code class="docutils literal notranslate"><span class="pre">genai.ChatSession</span></code> attached to this model.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">start_chat</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;Hello?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Arguments</th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">history</span></code></p>
+</td>
+<td>
+<p>An iterable of <a href="../../google/generativeai/protos/Content.md"><code>protos.Content</code></a> objects, or equivalents to initialize the session.</p>
+</td>
+</tr>
+</table>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-input">Multimodal input:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-turn">Multi-turn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-type-flexibility">Input type flexibility</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/api/google/generativeai/GenerativeModel.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Your Name.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

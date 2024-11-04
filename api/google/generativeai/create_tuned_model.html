@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>google.generativeai.create_tuned_model &#8212; Generative AI Python  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/google/generativeai/create_tuned_model';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Generative AI Python  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">google.generativeai.create_tuned_model</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="google-generativeai-create-tuned-model">
+<h1>google.generativeai.create_tuned_model<a class="headerlink" href="#google-generativeai-create-tuned-model" title="Link to this heading">#</a></h1>
+<!-- Insert buttons and diff -->
+<table class="tfo-notebook-buttons tfo-api nocontent">
+<td>
+  <a target="_blank" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/models.py#L245-L368">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />
+    View source on GitHub
+  </a>
+</td>
+</table>
+<p>Calls the API to initiate a tuning process that optimizes a model for specific data, returning an operation object to track and manage the tuning progress.</p>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>google.generativeai.create_tuned_model(
+    source_model: model_types.AnyModelNameOptions,
+    training_data: model_types.TuningDataOptions,
+    *,
+    id: (str | None) = None,
+    display_name: (str | None) = None,
+    description: (str | None) = None,
+    temperature: (float | None) = None,
+    top_p: (float | None) = None,
+    top_k: (int | None) = None,
+    epoch_count: (int | None) = None,
+    batch_size: (int | None) = None,
+    learning_rate: (float | None) = None,
+    input_key: str = &#x27;text_input&#x27;,
+    output_key: str = &#x27;output&#x27;,
+    client: (glm.ModelServiceClient | None) = None,
+    request_options: (helper_types.RequestOptionsType | None) = None
+) -> operations.CreateTunedModelOperation
+</code></pre>
+<!-- Placeholder for "Used in" -->
+<p>Since tuning a model can take significant time, this API doesn’t wait for the tuning to complete.
+Instead, it returns a <code class="docutils literal notranslate"><span class="pre">google.api_core.operation.Operation</span></code> object that lets you check on the
+status of the tuning job, or wait for it to complete, and check the result.</p>
+<p>After the job completes you can either find the resulting <code class="docutils literal notranslate"><span class="pre">TunedModel</span></code> object in
+<code class="docutils literal notranslate"><span class="pre">Operation.result()</span></code> or <code class="docutils literal notranslate"><span class="pre">palm.list_tuned_models</span></code> or <code class="docutils literal notranslate"><span class="pre">palm.get_tuned_model(model_id)</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_id</span> <span class="o">=</span> <span class="s2">&quot;my-tuned-model-id&quot;</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="n">palm</span><span class="o">.</span><span class="n">create_tuned_model</span><span class="p">(</span>
+  <span class="nb">id</span> <span class="o">=</span> <span class="n">my_id</span><span class="p">,</span>
+  <span class="n">source_model</span><span class="o">=</span><span class="s2">&quot;models/text-bison-001&quot;</span><span class="p">,</span>
+  <span class="n">training_data</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;text_input&#39;</span><span class="p">:</span> <span class="s1">&#39;example input&#39;</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;example output&#39;</span><span class="p">},</span><span class="o">...</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">tuned_model</span><span class="o">=</span><span class="n">operation</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>      <span class="c1"># Wait for tuning to finish</span>
+
+<span class="n">palm</span><span class="o">.</span><span class="n">generate_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tunedModels/</span><span class="si">{</span><span class="n">my_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">source_model</span></code><a id="source_model"></a></p>
+</td>
+<td>
+<p>The name of the model to tune.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">training_data</span></code><a id="training_data"></a></p>
+</td>
+<td>
+<p>The dataset to tune the model on. This must be either:</p>
+<ul class="simple">
+<li><p>A <a href="../../google/generativeai/protos/Dataset.md"><code>protos.Dataset</code></a>, or</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> of:
+*<a href="../../google/generativeai/protos/TuningExample.md"><code>protos.TuningExample</code></a>,</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">{'text_input':</span> <span class="pre">text_input,</span> <span class="pre">'output':</span> <span class="pre">output}</span></code> dicts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(text_input,</span> <span class="pre">output)</span></code> tuples.</p></li>
+</ul>
+</li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Mapping</span></code> of <code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code> - use <code class="docutils literal notranslate"><span class="pre">input_key</span></code> and <code class="docutils literal notranslate"><span class="pre">output_key</span></code> to choose which
+columns to use as the input/output</p></li>
+<li><p>A csv file (will be read with <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> and handles as a <code class="docutils literal notranslate"><span class="pre">Mapping</span></code>
+above). This can be:</p>
+<ul>
+<li><p>A local path as a <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code>.</p></li>
+<li><p>A url for a csv file.</p></li>
+<li><p>The url of a Google Sheets file.</p></li>
+</ul>
+</li>
+<li><p>A JSON file - Its contents will be handled either as an <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> or <code class="docutils literal notranslate"><span class="pre">Mapping</span></code>
+above. This can be:</p>
+<ul>
+<li><p>A local path as a <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">id</span></code><a id="id"></a></p>
+</td>
+<td>
+<p>The model identifier, used to refer to the model in the API
+<code class="docutils literal notranslate"><span class="pre">tunedModels/{id}</span></code>. Must be unique.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">display_name</span></code><a id="display_name"></a></p>
+</td>
+<td>
+<p>A human-readable name for display.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">description</span></code><a id="description"></a></p>
+</td>
+<td>
+<p>A description of the tuned model.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">temperature</span></code><a id="temperature"></a></p>
+</td>
+<td>
+<p>The default temperature for the tuned model, see <a href="../../google/generativeai/types/Model.md"><code>types.Model</code></a> for details.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">top_p</span></code><a id="top_p"></a></p>
+</td>
+<td>
+<p>The default <code class="docutils literal notranslate"><span class="pre">top_p</span></code> for the model, see <a href="../../google/generativeai/types/Model.md"><code>types.Model</code></a> for details.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">top_k</span></code><a id="top_k"></a></p>
+</td>
+<td>
+<p>The default <code class="docutils literal notranslate"><span class="pre">top_k</span></code> for the model, see <a href="../../google/generativeai/types/Model.md"><code>types.Model</code></a> for details.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">epoch_count</span></code><a id="epoch_count"></a></p>
+</td>
+<td>
+<p>The number of tuning epochs to run. An epoch is a pass over the whole dataset.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code><a id="batch_size"></a></p>
+</td>
+<td>
+<p>The number of examples to use in each training batch.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">learning_rate</span></code><a id="learning_rate"></a></p>
+</td>
+<td>
+<p>The step size multiplier for the gradient updates.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">client</span></code><a id="client"></a></p>
+</td>
+<td>
+<p>Which client to use.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">request_options</span></code><a id="request_options"></a></p>
+</td>
+<td>
+<p>Options for the request.</p>
+</td>
+</tr>
+</table>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Returns</h2></th></tr>
+<tr class="alt">
+<td colspan="2">
+<p>A <a class="reference external" href="https://googleapis.dev/python/google-api-core/latest/operation.html"><code class="docutils literal notranslate"><span class="pre">google.api_core.operation.Operation</span></code></a></p>
+</td>
+</tr>
+</table>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/api/google/generativeai/create_tuned_model.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Your Name.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

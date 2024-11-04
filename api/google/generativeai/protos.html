@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module: google.generativeai.protos &#8212; Generative AI Python  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/google/generativeai/protos';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Generative AI Python  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Module: google.generativeai.protos</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-google-generativeai-protos">
+<h1>Module: google.generativeai.protos<a class="headerlink" href="#module-google-generativeai-protos" title="Link to this heading">#</a></h1>
+<!-- Insert buttons and diff -->
+<table class="tfo-notebook-buttons tfo-api nocontent">
+<td>
+  <a target="_blank" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/protos.py">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />
+    View source on GitHub
+  </a>
+</td>
+</table>
+<p>This module provides low level access to the ProtoBuffer “Message” classes used by the API.</p>
+<p><strong>For typical usage of this SDK you do not need to use any of these classes.</strong></p>
+<p>ProtoBufers are Google API’s serilization format. They are strongly typed and efficient.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">genai</span></code> SDK tries to be permissive about what objects it will accept from a user, but in the end
+the SDK always converts input to an appropriate Proto Message object to send as the request. Each API request
+has a <code class="docutils literal notranslate"><span class="pre">*Request</span></code> and <code class="docutils literal notranslate"><span class="pre">*Response</span></code> Message defined here.</p>
+<p>If you have any uncertainty about what the API may accept or return, these classes provide the
+complete/unambiguous answer. They come from the <code class="docutils literal notranslate"><span class="pre">google-ai-generativelanguage</span></code> package which is
+generated from a snapshot of the API definition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">google.generativeai</span> <span class="kn">import</span> <span class="n">protos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">protos</span><span class="o">.</span><span class="n">Part</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Proto classes can have “oneof” fields. Use <code class="docutils literal notranslate"><span class="pre">in</span></code> to check which <code class="docutils literal notranslate"><span class="pre">oneof</span></code> field is set.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">protos</span><span class="o">.</span><span class="n">Part</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;text&#39;</span> <span class="ow">in</span> <span class="n">p</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">inline_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mime_type&#39;</span><span class="p">:</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;PNG&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">inline_data</span><span class="p">)</span> <span class="ow">is</span> <span class="n">protos</span><span class="o">.</span><span class="n">Blob</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;inline_data&#39;</span> <span class="ow">in</span> <span class="n">p</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;text&#39;</span> <span class="ow">in</span> <span class="n">p</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Instances of all Message classes can be converted into JSON compatible dictionaries with the following construct
+(Bytes are base64 encoded):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p_dict</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p_dict</span>
+<span class="go">{&#39;inline_data&#39;: {&#39;mime_type&#39;: &#39;image/png&#39;, &#39;data&#39;: &#39;UE5H&#39;}}</span>
+</pre></div>
+</div>
+<p>A compatible dict can be converted to an instance of a Message class by passing it as the first argument to the
+constructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">protos</span><span class="o">.</span><span class="n">Part</span><span class="p">(</span><span class="n">p_dict</span><span class="p">)</span>
+<span class="go">inline_data {</span>
+<span class="go">  mime_type: &quot;image/png&quot;</span>
+<span class="go">  data: &quot;PNG&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Note when converting that <code class="docutils literal notranslate"><span class="pre">to_dict</span></code> accepts additional arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">use_integers_for_enums:bool</span> <span class="pre">=</span> <span class="pre">True</span></code>, Set it to <code class="docutils literal notranslate"><span class="pre">False</span></code> to replace enum int values with their string
+names in the output</p></li>
+<li><p><code class="docutils literal notranslate"> <span class="pre">including_default_value_fields:bool</span> <span class="pre">=</span> <span class="pre">True</span></code>, Set it to <code class="docutils literal notranslate"><span class="pre">False</span></code> to reduce the verbosity of the output.</p></li>
+</ul>
+<p>Additional arguments are described in the docstring:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Part</span><span class="o">.</span><span class="n">to_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="protos/AttributionSourceId.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">AttributionSourceId</span></code></span></a>: Identifier for the source contributing to this attribution.</p>
+<p><a class="reference internal" href="protos/BatchCreateChunksRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchCreateChunksRequest</span></code></span></a>: Request to batch create <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/BatchCreateChunksResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchCreateChunksResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">BatchCreateChunks</span></code> containing a list of created <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/BatchDeleteChunksRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchDeleteChunksRequest</span></code></span></a>: Request to batch delete <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/BatchEmbedContentsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchEmbedContentsRequest</span></code></span></a>: Batch request to get embeddings from the model for a list of prompts.</p>
+<p><a class="reference internal" href="protos/BatchEmbedContentsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchEmbedContentsResponse</span></code></span></a>: The response to a <code class="docutils literal notranslate"><span class="pre">BatchEmbedContentsRequest</span></code>.</p>
+<p><a class="reference internal" href="protos/BatchEmbedTextRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchEmbedTextRequest</span></code></span></a>: Batch request to get a text embedding from the model.</p>
+<p><a class="reference internal" href="protos/BatchEmbedTextResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchEmbedTextResponse</span></code></span></a>: The response to a EmbedTextRequest.</p>
+<p><a class="reference internal" href="protos/BatchUpdateChunksRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchUpdateChunksRequest</span></code></span></a>: Request to batch update <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/BatchUpdateChunksResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BatchUpdateChunksResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">BatchUpdateChunks</span></code> containing a list of updated <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/Blob.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Blob</span></code></span></a>: Raw media bytes.</p>
+<p><a class="reference internal" href="protos/CachedContent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CachedContent</span></code></span></a>: Content that has been preprocessed and can be used in subsequent request to GenerativeService.</p>
+<p><a class="reference internal" href="protos/Candidate.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Candidate</span></code></span></a>: A response candidate generated from the model.</p>
+<p><a class="reference internal" href="protos/Chunk.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Chunk</span></code></span></a>: A <code class="docutils literal notranslate"><span class="pre">Chunk</span></code> is a subpart of a <code class="docutils literal notranslate"><span class="pre">Document</span></code> that is treated as an independent unit for the purposes of vector representation and storage.</p>
+<p><a class="reference internal" href="protos/ChunkData.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ChunkData</span></code></span></a>: Extracted data that represents the <code class="docutils literal notranslate"><span class="pre">Chunk</span></code> content.</p>
+<p><a class="reference internal" href="protos/CitationMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CitationMetadata</span></code></span></a>: A collection of source attributions for a piece of content.</p>
+<p><a class="reference internal" href="protos/CitationSource.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CitationSource</span></code></span></a>: A citation to a source for a portion of a specific response.</p>
+<p><a class="reference internal" href="protos/CodeExecution.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CodeExecution</span></code></span></a>: Tool that executes code generated by the model, and automatically returns the result to the model.</p>
+<p><a class="reference internal" href="protos/CodeExecutionResult.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CodeExecutionResult</span></code></span></a>: Result of executing the <code class="docutils literal notranslate"><span class="pre">ExecutableCode</span></code>.</p>
+<p><a class="reference internal" href="protos/Condition.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Condition</span></code></span></a>: Filter condition applicable to a single key.</p>
+<p><a class="reference internal" href="protos/Content.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Content</span></code></span></a>: The base structured datatype containing multi-part content of a message.</p>
+<p><a class="reference internal" href="protos/ContentEmbedding.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ContentEmbedding</span></code></span></a>: A list of floats representing an embedding.</p>
+<p><a class="reference internal" href="protos/ContentFilter.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ContentFilter</span></code></span></a>: Content filtering metadata associated with processing a single request.</p>
+<p><a class="reference internal" href="protos/Corpus.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Corpus</span></code></span></a>: A <code class="docutils literal notranslate"><span class="pre">Corpus</span></code> is a collection of <code class="docutils literal notranslate"><span class="pre">Document</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/CountMessageTokensRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountMessageTokensRequest</span></code></span></a>: Counts the number of tokens in the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> sent to a model.</p>
+<p><a class="reference internal" href="protos/CountMessageTokensResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountMessageTokensResponse</span></code></span></a>: A response from <code class="docutils literal notranslate"><span class="pre">CountMessageTokens</span></code>.</p>
+<p><a class="reference internal" href="protos/CountTextTokensRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountTextTokensRequest</span></code></span></a>: Counts the number of tokens in the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> sent to a model.</p>
+<p><a class="reference internal" href="protos/CountTextTokensResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountTextTokensResponse</span></code></span></a>: A response from <code class="docutils literal notranslate"><span class="pre">CountTextTokens</span></code>.</p>
+<p><a class="reference internal" href="protos/CountTokensRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountTokensRequest</span></code></span></a>: Counts the number of tokens in the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> sent to a model.</p>
+<p><a class="reference internal" href="protos/CountTokensResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CountTokensResponse</span></code></span></a>: A response from <code class="docutils literal notranslate"><span class="pre">CountTokens</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateCachedContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateCachedContentRequest</span></code></span></a>: Request to create CachedContent.</p>
+<p><a class="reference internal" href="protos/CreateChunkRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateChunkRequest</span></code></span></a>: Request to create a <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateCorpusRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateCorpusRequest</span></code></span></a>: Request to create a <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateDocumentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateDocumentRequest</span></code></span></a>: Request to create a <code class="docutils literal notranslate"><span class="pre">Document</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateFileRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateFileRequest</span></code></span></a>: Request for <code class="docutils literal notranslate"><span class="pre">CreateFile</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateFileResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateFileResponse</span></code></span></a>: Response for <code class="docutils literal notranslate"><span class="pre">CreateFile</span></code>.</p>
+<p><a class="reference internal" href="protos/CreatePermissionRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreatePermissionRequest</span></code></span></a>: Request to create a <code class="docutils literal notranslate"><span class="pre">Permission</span></code>.</p>
+<p><a class="reference internal" href="protos/CreateTunedModelMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateTunedModelMetadata</span></code></span></a>: Metadata about the state and progress of creating a tuned model returned from the long-running operation</p>
+<p><a class="reference internal" href="protos/CreateTunedModelRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CreateTunedModelRequest</span></code></span></a>: Request to create a TunedModel.</p>
+<p><a class="reference internal" href="protos/CustomMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">CustomMetadata</span></code></span></a>: User provided metadata stored as key-value pairs.</p>
+<p><a class="reference internal" href="protos/Dataset.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Dataset</span></code></span></a>: Dataset for training or validation.</p>
+<p><a class="reference internal" href="protos/DeleteCachedContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteCachedContentRequest</span></code></span></a>: Request to delete CachedContent.</p>
+<p><a class="reference internal" href="protos/DeleteChunkRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteChunkRequest</span></code></span></a>: Request to delete a <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>.</p>
+<p><a class="reference internal" href="protos/DeleteCorpusRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteCorpusRequest</span></code></span></a>: Request to delete a <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>.</p>
+<p><a class="reference internal" href="protos/DeleteDocumentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteDocumentRequest</span></code></span></a>: Request to delete a <code class="docutils literal notranslate"><span class="pre">Document</span></code>.</p>
+<p><a class="reference internal" href="protos/DeleteFileRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteFileRequest</span></code></span></a>: Request for <code class="docutils literal notranslate"><span class="pre">DeleteFile</span></code>.</p>
+<p><a class="reference internal" href="protos/DeletePermissionRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeletePermissionRequest</span></code></span></a>: Request to delete the <code class="docutils literal notranslate"><span class="pre">Permission</span></code>.</p>
+<p><a class="reference internal" href="protos/DeleteTunedModelRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DeleteTunedModelRequest</span></code></span></a>: Request to delete a TunedModel.</p>
+<p><a class="reference internal" href="protos/Document.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Document</span></code></span></a>: A <code class="docutils literal notranslate"><span class="pre">Document</span></code> is a collection of <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/DynamicRetrievalConfig.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">DynamicRetrievalConfig</span></code></span></a>: Describes the options to customize dynamic retrieval.</p>
+<p><a class="reference internal" href="protos/EmbedContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">EmbedContentRequest</span></code></span></a>: Request containing the <code class="docutils literal notranslate"><span class="pre">Content</span></code> for the model to embed.</p>
+<p><a class="reference internal" href="protos/EmbedContentResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">EmbedContentResponse</span></code></span></a>: The response to an <code class="docutils literal notranslate"><span class="pre">EmbedContentRequest</span></code>.</p>
+<p><a class="reference internal" href="protos/EmbedTextRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">EmbedTextRequest</span></code></span></a>: Request to get a text embedding from the model.</p>
+<p><a class="reference internal" href="protos/EmbedTextResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">EmbedTextResponse</span></code></span></a>: The response to a EmbedTextRequest.</p>
+<p><a class="reference internal" href="protos/Embedding.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Embedding</span></code></span></a>: A list of floats representing the embedding.</p>
+<p><a class="reference internal" href="protos/Example.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Example</span></code></span></a>: An input/output example used to instruct the Model.</p>
+<p><a class="reference internal" href="protos/ExecutableCode.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ExecutableCode</span></code></span></a>: Code generated by the model that is meant to be executed, and the result returned to the model.</p>
+<p><a class="reference internal" href="protos/File.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">File</span></code></span></a>: A file uploaded to the API.</p>
+<p><a class="reference internal" href="protos/FileData.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">FileData</span></code></span></a>: URI based data.</p>
+<p><a class="reference internal" href="protos/FunctionCall.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">FunctionCall</span></code></span></a>: A predicted <code class="docutils literal notranslate"><span class="pre">FunctionCall</span></code> returned from the model that contains a string representing the <a href="../../google/generativeai/protos/FunctionDeclaration.md#name"><code>FunctionDeclaration.name</code></a> with the arguments and their values.</p>
+<p><a class="reference internal" href="protos/FunctionCallingConfig.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">FunctionCallingConfig</span></code></span></a>: Configuration for specifying function calling behavior.</p>
+<p><a class="reference internal" href="protos/FunctionDeclaration.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">FunctionDeclaration</span></code></span></a>: Structured representation of a function declaration as defined by the <code class="docutils literal notranslate"><span class="pre">OpenAPI</span> <span class="pre">3.03</span> <span class="pre">specification</span> <span class="pre">&lt;https://spec.openapis.org/oas/v3.0.3&gt;</span></code>__.</p>
+<p><a class="reference internal" href="protos/FunctionResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">FunctionResponse</span></code></span></a>: The result output from a <code class="docutils literal notranslate"><span class="pre">FunctionCall</span></code> that contains a string representing the <a href="../../google/generativeai/protos/FunctionDeclaration.md#name"><code>FunctionDeclaration.name</code></a> and a structured JSON object containing any output from the function is used as context to the model.</p>
+<p><a class="reference internal" href="protos/GenerateAnswerRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateAnswerRequest</span></code></span></a>: Request to generate a grounded answer from the <code class="docutils literal notranslate"><span class="pre">Model</span></code>.</p>
+<p><a class="reference internal" href="protos/GenerateAnswerResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateAnswerResponse</span></code></span></a>: Response from the model for a grounded answer.</p>
+<p><a class="reference internal" href="protos/GenerateContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateContentRequest</span></code></span></a>: Request to generate a completion from the model.</p>
+<p><a class="reference internal" href="protos/GenerateContentResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateContentResponse</span></code></span></a>: Response from the model supporting multiple candidate responses.</p>
+<p><a class="reference internal" href="protos/GenerateMessageRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateMessageRequest</span></code></span></a>: Request to generate a message response from the model.</p>
+<p><a class="reference internal" href="protos/GenerateMessageResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateMessageResponse</span></code></span></a>: The response from the model.</p>
+<p><a class="reference internal" href="protos/GenerateTextRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateTextRequest</span></code></span></a>: Request to generate a text completion response from the model.</p>
+<p><a class="reference internal" href="protos/GenerateTextResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerateTextResponse</span></code></span></a>: The response from the model, including candidate completions.</p>
+<p><a class="reference internal" href="protos/GenerationConfig.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GenerationConfig</span></code></span></a>: Configuration options for model generation and outputs.</p>
+<p><a class="reference internal" href="protos/GetCachedContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetCachedContentRequest</span></code></span></a>: Request to read CachedContent.</p>
+<p><a class="reference internal" href="protos/GetChunkRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetChunkRequest</span></code></span></a>: Request for getting information about a specific <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>.</p>
+<p><a class="reference internal" href="protos/GetCorpusRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetCorpusRequest</span></code></span></a>: Request for getting information about a specific <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>.</p>
+<p><a class="reference internal" href="protos/GetDocumentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetDocumentRequest</span></code></span></a>: Request for getting information about a specific <code class="docutils literal notranslate"><span class="pre">Document</span></code>.</p>
+<p><a class="reference internal" href="protos/GetFileRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetFileRequest</span></code></span></a>: Request for <code class="docutils literal notranslate"><span class="pre">GetFile</span></code>.</p>
+<p><a class="reference internal" href="protos/GetModelRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetModelRequest</span></code></span></a>: Request for getting information about a specific Model.</p>
+<p><a class="reference internal" href="protos/GetPermissionRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetPermissionRequest</span></code></span></a>: Request for getting information about a specific <code class="docutils literal notranslate"><span class="pre">Permission</span></code>.</p>
+<p><a class="reference internal" href="protos/GetTunedModelRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GetTunedModelRequest</span></code></span></a>: Request for getting information about a specific Model.</p>
+<p><a class="reference internal" href="protos/GoogleSearchRetrieval.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GoogleSearchRetrieval</span></code></span></a>: Tool to retrieve public web data for grounding, powered by Google.</p>
+<p><a class="reference internal" href="protos/GroundingAttribution.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingAttribution</span></code></span></a>: Attribution for a source that contributed to an answer.</p>
+<p><a class="reference internal" href="protos/GroundingChunk.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingChunk</span></code></span></a>: Grounding chunk.</p>
+<p><a class="reference internal" href="protos/GroundingMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingMetadata</span></code></span></a>: Metadata returned to client when grounding is enabled.</p>
+<p><a class="reference internal" href="protos/GroundingPassage.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingPassage</span></code></span></a>: Passage included inline with a grounding configuration.</p>
+<p><a class="reference internal" href="protos/GroundingPassages.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingPassages</span></code></span></a>: A repeated list of passages.</p>
+<p><a class="reference internal" href="protos/GroundingSupport.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">GroundingSupport</span></code></span></a>: Grounding support.</p>
+<p><a class="reference internal" href="protos/HarmCategory.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">HarmCategory</span></code></span></a>: The category of a rating.</p>
+<p><a class="reference internal" href="protos/Hyperparameters.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Hyperparameters</span></code></span></a>: Hyperparameters controlling the tuning process.</p>
+<p><a class="reference internal" href="protos/ListCachedContentsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListCachedContentsRequest</span></code></span></a>: Request to list CachedContents.</p>
+<p><a class="reference internal" href="protos/ListCachedContentsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListCachedContentsResponse</span></code></span></a>: Response with CachedContents list.</p>
+<p><a class="reference internal" href="protos/ListChunksRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListChunksRequest</span></code></span></a>: Request for listing <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/ListChunksResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListChunksResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListChunks</span></code> containing a paginated list of <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/ListCorporaRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListCorporaRequest</span></code></span></a>: Request for listing <code class="docutils literal notranslate"><span class="pre">Corpora</span></code>.</p>
+<p><a class="reference internal" href="protos/ListCorporaResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListCorporaResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListCorpora</span></code> containing a paginated list of <code class="docutils literal notranslate"><span class="pre">Corpora</span></code>.</p>
+<p><a class="reference internal" href="protos/ListDocumentsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListDocumentsRequest</span></code></span></a>: Request for listing <code class="docutils literal notranslate"><span class="pre">Document</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/ListDocumentsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListDocumentsResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListDocuments</span></code> containing a paginated list of <code class="docutils literal notranslate"><span class="pre">Document</span></code>\ s.</p>
+<p><a class="reference internal" href="protos/ListFilesRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListFilesRequest</span></code></span></a>: Request for <code class="docutils literal notranslate"><span class="pre">ListFiles</span></code>.</p>
+<p><a class="reference internal" href="protos/ListFilesResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListFilesResponse</span></code></span></a>: Response for <code class="docutils literal notranslate"><span class="pre">ListFiles</span></code>.</p>
+<p><a class="reference internal" href="protos/ListModelsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListModelsRequest</span></code></span></a>: Request for listing all Models.</p>
+<p><a class="reference internal" href="protos/ListModelsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListModelsResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListModel</span></code> containing a paginated list of Models.</p>
+<p><a class="reference internal" href="protos/ListPermissionsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListPermissionsRequest</span></code></span></a>: Request for listing permissions.</p>
+<p><a class="reference internal" href="protos/ListPermissionsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListPermissionsResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListPermissions</span></code> containing a paginated list of permissions.</p>
+<p><a class="reference internal" href="protos/ListTunedModelsRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListTunedModelsRequest</span></code></span></a>: Request for listing TunedModels.</p>
+<p><a class="reference internal" href="protos/ListTunedModelsResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ListTunedModelsResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">ListTunedModels</span></code> containing a paginated list of Models.</p>
+<p><a class="reference internal" href="protos/LogprobsResult.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LogprobsResult</span></code></span></a>: Logprobs Result</p>
+<p><a class="reference internal" href="protos/Message.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Message</span></code></span></a>: The base unit of structured text.</p>
+<p><a class="reference internal" href="protos/MessagePrompt.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MessagePrompt</span></code></span></a>: All of the structured input text passed to the model as a prompt.</p>
+<p><a class="reference internal" href="protos/MetadataFilter.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MetadataFilter</span></code></span></a>: User provided filter to limit retrieval based on <code class="docutils literal notranslate"><span class="pre">Chunk</span></code> or <code class="docutils literal notranslate"><span class="pre">Document</span></code> level metadata values.</p>
+<p><a class="reference internal" href="protos/Model.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Model</span></code></span></a>: Information about a Generative Language Model.</p>
+<p><a class="reference internal" href="protos/Part.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Part</span></code></span></a>: A datatype containing media that is part of a multi-part <code class="docutils literal notranslate"><span class="pre">Content</span></code> message.</p>
+<p><a class="reference internal" href="protos/Permission.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Permission</span></code></span></a>: Permission resource grants user, group or the rest of the world access to the PaLM API resource (e.g.</p>
+<p><a class="reference internal" href="protos/PredictRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">PredictRequest</span></code></span></a>: Request message for [PredictionService.Predict][google.ai.generativelanguage.v1beta.PredictionService.Predict].</p>
+<p><a class="reference internal" href="protos/PredictResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">PredictResponse</span></code></span></a>: Response message for [PredictionService.Predict].</p>
+<p><a class="reference internal" href="protos/QueryCorpusRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">QueryCorpusRequest</span></code></span></a>: Request for querying a <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>.</p>
+<p><a class="reference internal" href="protos/QueryCorpusResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">QueryCorpusResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">QueryCorpus</span></code> containing a list of relevant chunks.</p>
+<p><a class="reference internal" href="protos/QueryDocumentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">QueryDocumentRequest</span></code></span></a>: Request for querying a <code class="docutils literal notranslate"><span class="pre">Document</span></code>.</p>
+<p><a class="reference internal" href="protos/QueryDocumentResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">QueryDocumentResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">QueryDocument</span></code> containing a list of relevant chunks.</p>
+<p><a class="reference internal" href="protos/RelevantChunk.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">RelevantChunk</span></code></span></a>: The information for a chunk relevant to a query.</p>
+<p><a class="reference internal" href="protos/RetrievalMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">RetrievalMetadata</span></code></span></a>: Metadata related to retrieval in the grounding flow.</p>
+<p><a class="reference internal" href="protos/SafetyFeedback.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">SafetyFeedback</span></code></span></a>: Safety feedback for an entire request.</p>
+<p><a class="reference internal" href="protos/SafetyRating.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">SafetyRating</span></code></span></a>: Safety rating for a piece of content.</p>
+<p><a class="reference internal" href="protos/SafetySetting.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">SafetySetting</span></code></span></a>: Safety setting, affecting the safety-blocking behavior.</p>
+<p><a class="reference internal" href="protos/Schema.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Schema</span></code></span></a>: The <code class="docutils literal notranslate"><span class="pre">Schema</span></code> object allows the definition of input and output data types.</p>
+<p><a class="reference internal" href="protos/SearchEntryPoint.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">SearchEntryPoint</span></code></span></a>: Google search entry point.</p>
+<p><a class="reference internal" href="protos/Segment.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Segment</span></code></span></a>: Segment of the content.</p>
+<p><a class="reference internal" href="protos/SemanticRetrieverConfig.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">SemanticRetrieverConfig</span></code></span></a>: Configuration for retrieving grounding content from a <code class="docutils literal notranslate"><span class="pre">Corpus</span></code> or <code class="docutils literal notranslate"><span class="pre">Document</span></code> created using the Semantic Retriever API.</p>
+<p><a class="reference internal" href="protos/StringList.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">StringList</span></code></span></a>: User provided string values assigned to a single metadata key.</p>
+<p><a class="reference internal" href="protos/TaskType.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TaskType</span></code></span></a>: Type of task for which the embedding will be used.</p>
+<p><a class="reference internal" href="protos/TextCompletion.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TextCompletion</span></code></span></a>: Output text returned from a model.</p>
+<p><a class="reference internal" href="protos/TextPrompt.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TextPrompt</span></code></span></a>: Text given to the model as a prompt.</p>
+<p><a class="reference internal" href="protos/Tool.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Tool</span></code></span></a>: Tool details that the model may use to generate response.</p>
+<p><a class="reference internal" href="protos/ToolConfig.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ToolConfig</span></code></span></a>: The Tool configuration containing parameters for specifying <code class="docutils literal notranslate"><span class="pre">Tool</span></code> use in the request.</p>
+<p><a class="reference internal" href="protos/TransferOwnershipRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TransferOwnershipRequest</span></code></span></a>: Request to transfer the ownership of the tuned model.</p>
+<p><a class="reference internal" href="protos/TransferOwnershipResponse.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TransferOwnershipResponse</span></code></span></a>: Response from <code class="docutils literal notranslate"><span class="pre">TransferOwnership</span></code>.</p>
+<p><a class="reference internal" href="protos/TunedModel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TunedModel</span></code></span></a>: A fine-tuned model created using ModelService.CreateTunedModel.</p>
+<p><a class="reference internal" href="protos/TunedModelSource.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TunedModelSource</span></code></span></a>: Tuned model as a source for training a new model.</p>
+<p><a class="reference internal" href="protos/TuningExample.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TuningExample</span></code></span></a>: A single example for tuning.</p>
+<p><a class="reference internal" href="protos/TuningExamples.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TuningExamples</span></code></span></a>: A set of tuning examples. Can be training or validation data.</p>
+<p><a class="reference internal" href="protos/TuningSnapshot.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TuningSnapshot</span></code></span></a>: Record for a single tuning step.</p>
+<p><a class="reference internal" href="protos/TuningTask.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">TuningTask</span></code></span></a>: Tuning tasks that create tuned models.</p>
+<p><a class="reference internal" href="protos/Type.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Type</span></code></span></a>: Type contains the list of OpenAPI data types as defined by https://spec.openapis.org/oas/v3.0.3#data-types</p>
+<p><a class="reference internal" href="protos/UpdateCachedContentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdateCachedContentRequest</span></code></span></a>: Request to update CachedContent.</p>
+<p><a class="reference internal" href="protos/UpdateChunkRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdateChunkRequest</span></code></span></a>: Request to update a <code class="docutils literal notranslate"><span class="pre">Chunk</span></code>.</p>
+<p><a class="reference internal" href="protos/UpdateCorpusRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdateCorpusRequest</span></code></span></a>: Request to update a <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>.</p>
+<p><a class="reference internal" href="protos/UpdateDocumentRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdateDocumentRequest</span></code></span></a>: Request to update a <code class="docutils literal notranslate"><span class="pre">Document</span></code>.</p>
+<p><a class="reference internal" href="protos/UpdatePermissionRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdatePermissionRequest</span></code></span></a>: Request to update the <code class="docutils literal notranslate"><span class="pre">Permission</span></code>.</p>
+<p><a class="reference internal" href="protos/UpdateTunedModelRequest.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">UpdateTunedModelRequest</span></code></span></a>: Request to update a TunedModel.</p>
+<p><a class="reference internal" href="protos/VideoMetadata.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">VideoMetadata</span></code></span></a>: Metadata for a video <code class="docutils literal notranslate"><span class="pre">File</span></code>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/api/google/generativeai/protos.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Your Name.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>google.generativeai.types.GenerationConfig &#8212; Generative AI Python  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/google/generativeai/types/GenerationConfig';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Generative AI Python  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">google.generativeai.types.GenerationConfig</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="google-generativeai-types-generationconfig">
+<h1>google.generativeai.types.GenerationConfig<a class="headerlink" href="#google-generativeai-types-generationconfig" title="Link to this heading">#</a></h1>
+<!-- Insert buttons and diff -->
+<table class="tfo-notebook-buttons tfo-api nocontent">
+<td>
+  <a target="_blank" href="https://github.com/google/generative-ai-python/blob/master/google/generativeai/types/generation_types.py#L90-L182">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />
+    View source on GitHub
+  </a>
+</td>
+</table>
+<p>A simple dataclass used to configure the generation parameters of <a href="../../../google/generativeai/GenerativeModel.md#generate_content"><code>GenerativeModel.generate_content</code></a>.</p>
+<section class="expandable">
+  <h4 class="showalways">View aliases</h4>
+  <p>
+<b>Main aliases</b>
+<p>`google.generativeai.GenerationConfig`</p>
+</p>
+</section>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>google.generativeai.types.GenerationConfig(
+    candidate_count: (int | None) = None,
+    stop_sequences: (Iterable[str] | None) = None,
+    max_output_tokens: (int | None) = None,
+    temperature: (float | None) = None,
+    top_p: (float | None) = None,
+    top_k: (int | None) = None,
+    seed: (int | None) = None,
+    response_mime_type: (str | None) = None,
+    response_schema: (protos.Schema | Mapping[str, Any] | type | None) = None,
+    presence_penalty: (float | None) = None,
+    frequency_penalty: (float | None) = None,
+    response_logprobs: (bool | None) = None,
+    logprobs: (int | None) = None
+)
+</code></pre>
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
+<tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">candidate_count</span></code><a id="candidate_count"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of generated responses to return.
+</pre></div>
+</div>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">stop_sequences</span></code><a id="stop_sequences"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The set of character sequences (up
+</pre></div>
+</div>
+<p>to 5) that will stop output generation. If
+specified, the API will stop at the first
+appearance of a stop sequence. The stop sequence
+will not be included as part of the response.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">max_output_tokens</span></code><a id="max_output_tokens"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum number of tokens to include in a
+</pre></div>
+</div>
+<p>candidate.</p>
+<p>If unset, this will default to output_token_limit specified
+in the model’s specification.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">temperature</span></code><a id="temperature"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Controls the randomness of the output. Note: The
+</pre></div>
+</div>
+<p>default value varies by model, see the <a href="../../../google/generativeai/protos/Model.md#temperature"><code>Model.temperature</code></a>
+attribute of the <code class="docutils literal notranslate"><span class="pre">Model</span></code> returned the <code class="docutils literal notranslate"><span class="pre">genai.get_model</span></code>
+function.</p>
+<p>Values can range from [0.0,1.0], inclusive. A value closer
+to 1.0 will produce responses that are more varied and
+creative, while a value closer to 0.0 will typically result
+in more straightforward responses from the model.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">top_p</span></code><a id="top_p"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional. The maximum cumulative probability of tokens to
+</pre></div>
+</div>
+<p>consider when sampling.</p>
+<p>The model uses combined Top-k and nucleus sampling.</p>
+<p>Tokens are sorted based on their assigned probabilities so
+that only the most likely tokens are considered. Top-k
+sampling directly limits the maximum number of tokens to
+consider, while Nucleus sampling limits number of tokens
+based on the cumulative probability.</p>
+<p>Note: The default value varies by model, see the
+<a href="../../../google/generativeai/protos/Model.md#top_p"><code>Model.top_p</code></a> attribute of the <code class="docutils literal notranslate"><span class="pre">Model</span></code> returned the
+<code class="docutils literal notranslate"><span class="pre">genai.get_model</span></code> function.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">top_k</span></code><a id="top_k"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+<p>Optional. The maximum number of tokens to consider when
+sampling.</p>
+<p>The model uses combined Top-k and nucleus sampling.</p>
+<p>Top-k sampling considers the set of <code class="docutils literal notranslate"><span class="pre">top_k</span></code> most probable
+tokens. Defaults to 40.</p>
+<p>Note: The default value varies by model, see the
+<a href="../../../google/generativeai/protos/Model.md#top_k"><code>Model.top_k</code></a> attribute of the <code class="docutils literal notranslate"><span class="pre">Model</span></code> returned the
+<code class="docutils literal notranslate"><span class="pre">genai.get_model</span></code> function.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">seed</span></code><a id="seed"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional.  Seed used in decoding. If not set, the request uses a randomly generated seed.
+</pre></div>
+</div>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">response_mime_type</span></code><a id="response_mime_type"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional. Output response mimetype of the generated candidate text.
+</pre></div>
+</div>
+<p>Supported mimetype:
+<code class="docutils literal notranslate"><span class="pre">text/plain</span></code>: (default) Text output.
+<code class="docutils literal notranslate"><span class="pre">text/x-enum</span></code>: for use with a string-enum in <code class="docutils literal notranslate"><span class="pre">response_schema</span></code>
+<code class="docutils literal notranslate"><span class="pre">application/json</span></code>: JSON response in the candidates.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">response_schema</span></code><a id="response_schema"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional. Specifies the format of the JSON requested if response_mime_type is
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">application/json</span></code>.</p>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">presence_penalty</span></code><a id="presence_penalty"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional.
+</pre></div>
+</div>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">frequency_penalty</span></code><a id="frequency_penalty"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional.
+</pre></div>
+</div>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">response_logprobs</span></code><a id="response_logprobs"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional. If true, export the `logprobs` results in response.
+</pre></div>
+</div>
+</td>
+</tr><tr>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">logprobs</span></code><a id="logprobs"></a></p>
+</td>
+<td>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Optional. Number of candidates of log probabilities to return at each step of decoding.
+</pre></div>
+</div>
+</td>
+</tr>
+</table>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<h3 id="__eq__"><code>__eq__</code></h3>
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>__eq__(
+    other
+)
+</code></pre>
+<p>Return self==value.</p>
+<!-- Tabular view -->
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Class Variables</h2></th></tr>
+<tr>
+<td>
+<p>candidate_count<a id="candidate_count"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>frequency_penalty<a id="frequency_penalty"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>logprobs<a id="logprobs"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>max_output_tokens<a id="max_output_tokens"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>presence_penalty<a id="presence_penalty"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>response_logprobs<a id="response_logprobs"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>response_mime_type<a id="response_mime_type"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>response_schema<a id="response_schema"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>seed<a id="seed"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>stop_sequences<a id="stop_sequences"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>temperature<a id="temperature"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>top_k<a id="top_k"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr><tr>
+<td>
+<p>top_p<a id="top_p"></a></p>
+</td>
+<td>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</td>
+</tr>
+</table>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../../_sources/api/google/generativeai/types/GenerationConfig.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Your Name.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
